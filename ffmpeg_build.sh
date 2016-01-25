@@ -43,7 +43,6 @@ make clean
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
 --extra-ldflags="-L${TOOLCHAIN_PREFIX}/lib $LDFLAGS" \
---extra-libs="-lpng -lexpat -lm" \
 --extra-cxxflags="$CXX_FLAGS" || exit 1
 
 make -j${NUMBER_OF_CORES} && make install || exit 1
