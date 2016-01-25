@@ -22,24 +22,24 @@ make clean
 --cpu="$CPU" \
 --enable-runtime-cpudetect \
 --sysroot="$NDK_SYSROOT" \
---enable-pic \
 --enable-libx264 \
---enable-libass \
---enable-libfreetype \
---enable-libfribidi \
---enable-fontconfig \
 --enable-pthreads \
 --disable-debug \
 --disable-ffserver \
+--disable-ffmpeg \
+--disable-ffplay \
+--disable-ffprobe \
+--disable-avdevice \
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
 --disable-ffprobe \
---enable-gpl \
---enable-yasm \
+--enable-shared \
+--disable-static \
 --disable-doc \
---disable-shared \
---enable-static \
+--disable-doc \
+--disable-symver \
+--enable-yasm \
 --pkg-config="${2}/ffmpeg-pkg-config" \
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
@@ -50,3 +50,10 @@ make clean
 make -j${NUMBER_OF_CORES} && make install || exit 1
 
 popd
+
+
+    --cross-prefix=$TOOLCHAIN/bin/arm-linux-androideabi- \
+
+    --target-os=linux \
+
+    --arch=arm \
