@@ -21,10 +21,9 @@ echo $CFLAGS
   --cross-prefix="$CROSS_PREFIX" \
   --sysroot="$NDK_SYSROOT" \
   --host="$HOST" \
-  --enable-pic \
   --disable-asm \
   --enable-static \
-  --disable-shared \
+  --enable-shared \
   --prefix="${TOOLCHAIN_PREFIX}" \
   --disable-cli || exit 1
 
