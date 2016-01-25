@@ -22,7 +22,6 @@ make clean
 --cpu="$CPU" \
 --enable-runtime-cpudetect \
 --sysroot="$NDK_SYSROOT" \
---enable-libx264 \
 --enable-pthreads \
 --disable-debug \
 --disable-ffserver \
